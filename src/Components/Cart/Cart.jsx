@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import styled from "styled-components";
 import Navbar from "../Navbar/Navbar";
 
-function Cart({ cartItems, totalPrice,number,setName,setNumber,registers,handleClick,show, }) {
+function Cart({ cartItems, totalPrice,number,setName,setNumber,registers,handleClick,show,address,setAdress }) {
   
   
   return (
@@ -24,8 +24,9 @@ function Cart({ cartItems, totalPrice,number,setName,setNumber,registers,handleC
       <div className="inputs">
         <i onClick={handleClick} class="fa-solid fa-xmark"></i>  
          <input type='text' onChange={(e) => setName(e.target.value)} placeholder='Ismingiz ?'/> 
+         <input type='text' onChange={(e) => setAdress(e.target.value)} placeholder='Manzilingiz ?'/> 
          <input type='number' onChange={(e)=>setNumber(e.target.value)} placeholder='Raqamingiz ?'/>
-        <button onClick={registers} disabled={number.length < 12}>Buyurtma</button>
+        <button onClick={registers} disabled={number.length < 9}>Buyurtma</button>
       </div>
       }
     </div>
@@ -51,6 +52,13 @@ const Edit = styled.div`
   .inputs button{
     width: 100px;
     margin: 0 auto;
+    border: 2px solid gold;
+    padding: 3px 0px;
+    border-radius: 8px;
+    background:green;
+    color:white;
+    font-weight: 200;
+    letter-spacing: 1px;
   }
   .inputs input{
     margin: 0 40px;

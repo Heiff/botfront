@@ -7,6 +7,9 @@ import axios from 'axios'
 import { getData } from "./db/db";
 
 
+
+
+
 const Data = getData();
 
 
@@ -16,6 +19,7 @@ function Prop() {
   const [cartItems, setCartItems] = useState([]);
   const [name,setName] = useState('')
   const [number,setNumber] = useState('')
+  const [adress,setAdress] = useState('')
   const bot = '5899734443:AAGUk7K0k4Gpw_FiF8E9q9SUcJs61ZT9TW0'
   const chat = '5762202354'
   const [show,toggleShow] =useState(false);
@@ -24,8 +28,7 @@ function Prop() {
   }
 
   const totalPrice = cartItems.reduce((a, c) => a + c.price * c.quantity, 0);
-
-
+  
 
   useEffect(() => {
     tele.ready();
@@ -36,29 +39,53 @@ function Prop() {
       `https://api.telegram.org/bot${bot}/sendMessage?chat_id=${chat}&text=${encodeURIComponent(
     `
     <b>Zakazlar:</b>
-    <b>${name}</b>
-    <b>${number}</b>
+    <b>Ismi: ${name}</b>
+    <b>Manzil: ${adress}</b>
+    <b>Raqami: ${number}</b>
     <b>Umumiy Hisob: ${totalPrice}.000 Uzs</b>
 
 ${cartItems
   .map((el) => {
+    const count = el.price * el.quantity;
+    const num = count / el.price
     return `
+    <b>Soni: ${num} ta</b>
     <b>${el.title} mahsuloti</b>
-    <b>narxi: ${el.price}.000 Uzs</b>
+    <b>narxi: ${el.price} Uzs</b>
+    <b>Jami: ${count}.000 Uzs</b>
+    
 
+   
     `;
   })
   .join("")}        
     `
       )} &parse_mode=html`
-    );
-    setTimeout(() => {
-      handleClick()
-      alert('zakaz olindi');
-    }, 600);
+    )
+    .then((res)=>{
+      if(res.status === 200){
+        setTimeout(() => {
+      
+          handleClick()
+        alert('zakaz olindi');
+        
+      }, 600);
+      }
+      else{
+        alert('internet tekshiring')
+        return(
+          <div>
+            <h1 style={{position:"absolute"}}>returt</h1>
+          </div>
+        )
+      }
+    })
+   
   };
+ 
 
-
+  
+  
   const onAdd = (food) => {
     const exist = cartItems.find((x) => x.id === food.id);
     if (exist) {
@@ -67,9 +94,12 @@ ${cartItems
           x.id === food.id ? { ...exist, quantity: exist.quantity + 1 } : x
         )
       );
-    } else {
+    }
+    
+    else {
       setCartItems([...cartItems, { ...food, quantity: 1 }]);
     }
+   
   };
 
   const onRemove = (food) => {
@@ -84,12 +114,12 @@ ${cartItems
       );
     }
   };
-
+  
  
 
   return (
     <Edit>
-      <Cart cartItems={cartItems} handleClick={handleClick} show={show} toggleShow={toggleShow}  totalPrice={totalPrice} setName={setName} setNumber={setNumber} number={number} registers={registers}/>
+      <Cart cartItems={cartItems} handleClick={handleClick} show={show} toggleShow={toggleShow}  totalPrice={totalPrice} setName={setName} setNumber={setNumber} number={number} adress={adress} setAdress={setAdress} registers={registers}/>
       <div className="cards">
         {Data.map((food) => {
           return (

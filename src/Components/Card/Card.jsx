@@ -6,19 +6,23 @@ import { Link } from "react-router-dom";
 import { Context } from "../../Context";
 
 
+
+
 function Card({ food, onAdd, onRemove }) {
   const {goTop} = useContext(Context);
   const [count, setCount] = useState(0);
   const { title, image, price } = food;
 
-  const handleIncrement = () => {
+  const handleIncrement = (el) => {
     setCount(count + 1);
     onAdd(food);
   };
-  const handleDecrement = () => {
+  const handleDecrement = (id) => {
     setCount(count - 1);
     onRemove(food);
   };
+  
+  
 
   return (
     <Edit>

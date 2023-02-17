@@ -5,6 +5,7 @@ const Context = createContext()
 const api = ("http://localhost:3000/products") 
 const ContextProvider = ({children}) => {
     const [array, setArray] = useState([]);
+    const [count, setCount] = useState(0);
     
     const getProduct = async () => {
         const res = await fetch(api);
@@ -25,7 +26,7 @@ const ContextProvider = ({children}) => {
       
      
     return(
-        <Context.Provider value={{array,goTop}}>
+        <Context.Provider value={{array,goTop,count,setCount}}>
             {children}
         </Context.Provider>
     )
