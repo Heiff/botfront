@@ -58,6 +58,7 @@ const Edit = styled.div`
     border: 1px solid red;
 }
 .imgs{
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -73,6 +74,8 @@ const Edit = styled.div`
     color: gold;
 }
 .card img{
+    width: 90%;
+    margin: 0 auto;
     border-radius: 10px;
     border: 3px solid gold;
 }
