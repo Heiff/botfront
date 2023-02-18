@@ -52,13 +52,9 @@ const Edit = styled.div`
   .inputs button{
     width: 100px;
     margin: 0 auto;
-    border: 2px solid gold;
+    border: 1px solid gray;
     padding: 3px 0px;
     border-radius: 8px;
-    background:green;
-    color:white;
-    font-weight: 200;
-    letter-spacing: 1px;
   }
   .inputs input{
     margin: 0 40px;
