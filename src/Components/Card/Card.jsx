@@ -58,7 +58,8 @@ const Edit = styled.div`
     color: gold;
   }
   h4{
-    font-size: 12px;
+    min-height: 38px;
+    font-size: 14px;
     margin: 0 auto;
     font-weight: 400;
     display: flex;
@@ -73,11 +74,8 @@ const Edit = styled.div`
   }
 .card {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 150px;
-  min-height:275px;
+  width: 140px;
+  min-height:265px;
   border: 2px solid var(--primary-color);
   padding: 0.5rem 0.3rem;
   margin: 13px 10px;
