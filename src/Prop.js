@@ -20,6 +20,7 @@ function Prop() {
   const [name,setName] = useState('')
   const [number,setNumber] = useState('')
   const [adress,setAdress] = useState('')
+  const [Option,setOption] = useState('')
   const bot = '5899734443:AAGUk7K0k4Gpw_FiF8E9q9SUcJs61ZT9TW0'
   const chat = '5762202354'
   const [show,toggleShow] =useState(false);
@@ -41,7 +42,7 @@ function Prop() {
     <b>Zakazlar:</b>
     <b>Ismi: ${name}</b>
     <b>Manzil: ${adress}</b>
-    <b>Raqami: ${number}</b>
+    <b>Raqami:${Option} ${number}</b>
     <b>Umumiy Hisob: ${totalPrice}.000 Uzs</b>
 
 ${cartItems
@@ -67,7 +68,7 @@ ${cartItems
         setTimeout(() => {
       
           handleClick()
-        alert('zakaz olindi');
+        alert(`zakaz olindi 48 soat ichida siz bilan bog'lanamiz`);
         
       }, 600);
       }
@@ -119,7 +120,7 @@ ${cartItems
 
   return (
     <Edit>
-      <Cart cartItems={cartItems} handleClick={handleClick} show={show} toggleShow={toggleShow}  totalPrice={totalPrice} setName={setName} setNumber={setNumber} number={number} adress={adress} setAdress={setAdress} registers={registers}/>
+      <Cart cartItems={cartItems} handleClick={handleClick} show={show} toggleShow={toggleShow}  totalPrice={totalPrice} setName={setName} setNumber={setNumber} number={number} adress={adress} setAdress={setAdress} registers={registers} setOption={setOption}/>
       <div className="cards">
         {Data.map((food) => {
           return (

@@ -21,8 +21,8 @@ function Card({ food, onAdd, onRemove }) {
     setCount(count - 1);
     onRemove(food);
   };
-  
-  
+   
+  const sale = price * 1
 
   return (
     <Edit>
@@ -34,7 +34,7 @@ function Card({ food, onAdd, onRemove }) {
         <img src={image} alt='' />
       </div>
       <h4>{title} </h4>
-      <h5>{price} Uzs</h5>
+      <h5>{sale.toFixed()}.000 Uzs</h5>
       <Link to={`/${food.id}`} onClick={()=>goTop()}>
         Malumot
       </Link>  
@@ -59,7 +59,8 @@ const Edit = styled.div`
   }
   h4{
     font-size: 12px;
-    margin: 0;
+    margin: 0 auto;
+    font-weight: 400;
     display: flex;
     justify-content: center;
   }
@@ -71,6 +72,7 @@ const Edit = styled.div`
     justify-content: center;
   }
 .card {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
