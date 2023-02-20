@@ -77,7 +77,7 @@ const Edit = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 150px;
-  height: max-content;
+  min-height:275px;
   border: 2px solid var(--primary-color);
   padding: 0.5rem 0.3rem;
   margin: 13px 10px;
