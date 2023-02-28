@@ -8,6 +8,7 @@ import { Context } from "../../Context";
 
 
 
+
 function Card({ food, onAdd, onRemove }) {
   const {goTop} = useContext(Context);
   const [count, setCount] = useState(0);
@@ -21,7 +22,7 @@ function Card({ food, onAdd, onRemove }) {
     setCount(count - 1);
     onRemove(food);
   };
-   
+
   const sale = price * 1
 
   return (
@@ -36,7 +37,7 @@ function Card({ food, onAdd, onRemove }) {
       <h4>{title} </h4>
       <h5>{sale.toFixed()}.000 Uzs</h5>
       <Link to={`/${food.id}`} onClick={()=>goTop()}>
-        Malumot
+        Малумоть
       </Link>  
       <div className="btn-container">
         <Button title={"+"} type={"add"} onClick={handleIncrement} />

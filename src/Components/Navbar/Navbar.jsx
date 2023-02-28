@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../../images/logo.jpg'
 import logo2 from '../../images/logo2.png'
+
+
 const Navbar = () => {
   return (
     <Edit>
@@ -12,9 +14,9 @@ const Navbar = () => {
         <img src={logo2} alt=''/>
         </div>
         <div className='nav1'>
-        <Link to='/'>Home</Link>
-        <Link to='/Contact'>Contact</Link>
-        <Link to='/About'>About</Link>
+        <Link to='/'>Главное</Link>
+        <Link to='/Contact'>Контакты</Link>
+        <Link to='/About'>О нас</Link>
         </div>
     </div>
     </Edit>

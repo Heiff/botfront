@@ -22,8 +22,8 @@ const Params = () => {
         </div>
         <h2>{sell.desc}</h2>
         <div className='price'>
-        <h3>Narxi: {sell.price} Uzs</h3>
-        <Link to='/' onClick={()=>goTop()}><p>sotib olishga oting <span>!!!</span></p></Link>
+        <h3>Нархи: {sell.price} Uzs</h3>
+        <Link to='/' onClick={()=>goTop()}><p>Сотиб олишь у́тинг <span>!!!</span></p></Link>
         </div>
     </div>
     </Edit>

@@ -10,11 +10,11 @@ function Cart({ cartItems, totalPrice,number,setName,setNumber,registers,handleC
   return (
     <Edit>
       <Navbar/>
-       <h1>{cartItems.length === 0 ? "Hech nma yoq" : ""}</h1>
+       <h1>{cartItems.length === 0 ? "Хеч нима олмадингиз" : ""}</h1>
     <div className="cart__container">     
        <span className="">Umumiy hisob: {totalPrice.toFixed(3)} Uzs</span>
        <Button
-        title={`${cartItems.length === 0 ? "Tanlang !!!" : "Sotib Olish"} `}
+        title={`${cartItems.length === 0 ? "Танланг !!!" : "Сотиб олишь"} `}
         type={"checkout"}
         disable={cartItems.length === 0 ? true : false}
         onClick={handleClick}
@@ -23,10 +23,10 @@ function Cart({ cartItems, totalPrice,number,setName,setNumber,registers,handleC
       {show &&  
       <div className="inputs">
         <i onClick={handleClick} class="fa-solid fa-xmark"></i>  
-         <input type='text' onChange={(e) => setName(e.target.value)} placeholder='Ismingiz ?'/> 
-         <input type='text' onChange={(e) => setAdress(e.target.value)} placeholder='Manzilingiz ?'/> 
-         <input type='number' onChange={(e)=>setNumber(e.target.value)} placeholder='Raqamingiz ?'/>
-        <button onClick={registers} disabled={number.length !== 9} >Buyurtma</button>
+         <input type='text' onChange={(e) => setName(e.target.value)} placeholder='Исмингиз ?'/> 
+         <input type='text' onChange={(e) => setAdress(e.target.value)} placeholder='Манзилингиз ?'/> 
+         <input type='number' onChange={(e)=>setNumber(e.target.value)} placeholder='Ракамингиз ?'/>
+        <button onClick={registers} disabled={number.length !== 9} >Буйуртма бериш</button>
       </div>
       }
     </div>

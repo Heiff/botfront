@@ -116,16 +116,18 @@ ${cartItems
     }
   };
   
- 
+
+
 
   return (
     <Edit>
       <Cart cartItems={cartItems} handleClick={handleClick} show={show} toggleShow={toggleShow}  totalPrice={totalPrice} setName={setName} setNumber={setNumber} number={number} adress={adress} setAdress={setAdress} registers={registers} setOption={setOption}/>
       <div className="cards">
+                
         {Data.map((food) => {
           return (
             <div>
-            <Card food={food} key={food.id} onAdd={onAdd} onRemove={onRemove} />    
+             <Card food={food} key={food.id} onAdd={onAdd} onRemove={onRemove} />   
             </div>     
           );
         })}
