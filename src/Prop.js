@@ -21,7 +21,7 @@ function Prop() {
   const [number,setNumber] = useState('')
   const [adress,setAdress] = useState('')
   const [Option,setOption] = useState('')
-  const bot = '5899734443:AAGUk7K0k4Gpw_FiF8E9q9SUcJs61ZT9TW0'
+  const bot = '6060145833:AAFK6ysVC7R3ULJfa6vze8RAaJugubBO5oE'
   const chat = '5762202354'
   const [show,toggleShow] =useState(false);
   const handleClick = () =>{
